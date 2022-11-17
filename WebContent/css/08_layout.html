@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Layout</title>
+		<style>
+			#wrapper {
+				width: 1000px;
+				margin: 0px auto;
+			}
+		
+			#header {
+				border: 1px solid black;
+				height: 50px;
+			}
+			
+			.sidebar {
+				border: 1px solid red;
+				width: 300px;
+				height: 200px; 
+				float: left;
+				box-sizing: border-box;
+			}
+
+			.content{
+				border: 1px solid blue;
+				width: 700px;
+				height: 200px;
+				float: left;
+				box-sizing: border-box;
+			}
+			
+			#footer {
+				border: 1px dashed black;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">This is header</div>
+	
+			<div id="center">
+				<div class="sidebar">This is sidebar</div>
+				<div class="content">This is content</div>
+			</div>
+			
+			<div id="footer">This is footer</div>
+	</div>
+	</body>
+</html>

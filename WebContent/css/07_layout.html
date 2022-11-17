@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Layout</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+		
+			#header {
+				border: 1px solid black;
+				height: 100px;
+				margin-bottom: 10px;
+			}
+			
+			#content1 {
+				border: 2px dashed red;
+				padding-top: 10px;
+				padding-left: 50px;
+				padding-right: 50px;
+				padding-bottom: 10px;
+				height: 100px;
+				box-sizing: border-box;
+			}
+			
+			#content1 .innerDiv {
+				background-color: green; 
+				height: 100px;
+			}
+			
+			#content2 {
+				border: 4px dotted orange;
+				margin: 50px;
+			}
+			
+			#content2 .innerDiv {
+				/* margin: 50px 50px 50px 50px; */
+				/*margin: 50px 10px; */
+				margin: 50px auto;
+				background-color: silver;
+			}
+			
+			#footer {
+				border: 2px solid blue;
+				width: 500px;
+				height: 300px;
+			}
+			
+			#footer .innerDiv {
+				background-color: #ff00ff;
+				width: 50%
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">This is header</div>
+
+		<div id="content1">
+			<div class="innerDiv">This is content1</div>
+		</div>
+		
+		<div id="content2">
+			<div class="innerDiv">This is content2</div>
+		</div>
+		
+		<div id="footer">
+			<div class="innerDiv">This is footer</div>
+		</div>
+	</body>
+</html>
