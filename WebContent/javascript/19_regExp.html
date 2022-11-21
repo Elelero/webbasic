@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	</head>
+	<body>
+		<script>
+			//정규표현식과 일치하는 내용을 찾을 때
+			var text = "The rain in SPAIN stays mainly in the plain";
+			console.log(text.match("ain"));
+			console.log(text.match(/ain/));
+			console.log(text.match(/ain/g)); //대소문자 구분하여 찾음 ['ain', 'ain', 'ain']
+			console.log(text.match(/ain/gi)); //대소문자 상관없이 찾음 ['ain', 'AIN', 'ain', 'ain']
+			console.log(text.match(/love/gi)); //null
+			
+			if(text.match(/love/gi)){
+				console.log("love가 포함되어 있음")
+			} else {
+				console.log("love가 포함되어 있지 않음") //(o)
+			}
+			
+			//입력 데이터 유효성 검사할 때
+			var tel = "010-1234-1234";
+			var telPattern = /010-\d{3,4}-\d{4}/;
+			var result = telPattern.test(tel);
+			console.log(result); //true
+			
+			tel = "010-12-1234";
+			result = telPattern.test(tel);
+			console.log(result); //false
+
+			tel = "82-010-1234-1234";
+			result = telPattern.test(tel);
+			console.log(result); //true
+
+			tel = "010-1234-1234abcd";
+			result = telPattern.test(tel);
+			console.log(result); //true
+	
+			//시작점과 끝점 알리기
+			tel = "82-010-1234-1234";
+			var telPattern = /^010-\d{3,4}-\d{4}$/; //^:시작, $: 끝
+			result = telPattern.test(tel);
+			console.log(result); //false
+
+			tel = "010-1234-1234abcd";
+			result = telPattern.test(tel);
+			console.log(result); //false
+			
+			var email = "fall@naver.co.kr.kr";
+			var emailPattern = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/; //이메일 정규식
+			var result2 = emailPattern.test(email);
+			console.log(result2); //true
+		</script>
+	</body>
+</html>

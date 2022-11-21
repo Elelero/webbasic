@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	
+		<script>
+			/* ============[Infinity]============ */
+			var var1 = 3/0;
+			console.log(var1); //Infinity
+			console.log(var1 == Infinity); //true => Infinity도 비교대상 가능(자바는 에러발생)
+			
+			if(var1){ 
+				console.log("Infinity_if문-true"); //(o)
+			} else {
+				console.log("Infinity_if문-false");
+			}
+			
+			var var2 = var1 + 5;
+			console.log(var2); //Infinity
+			
+	
+			/* =============[NaN (Not a Number)]============= */
+			//NaN은 직접 비교가 불가능
+			var var3 = 100 - "car";
+			console.log(var3); //NaN
+			console.log(var3 === NaN); //false
+
+			//isNaN 메소드를 이용하여 비교가능
+			if(isNaN(var3)){
+				console.log("숫자가 아닙니다."); //(o)
+			} else {
+				console.log("숫자입니다.");
+			}
+			
+			if(var3){
+				console.log("NaN_if문-true");
+			} else {
+				console.log("NaN_if문-false"); //(o) => ∵ NaN은 부정의 의미
+			}
+			
+			/* ==============[undefined]=============== */
+			var var4;
+			console.log(var4); //undefined
+			console.log(var4 == undefined); //true (비교 가능)
+			
+			if(var4){
+				console.log("undefined_if문-true");
+			} else {
+				console.log("undefined_if문-false"); //(o) => ∵ undefined은 부정의 의미
+			}
+			
+			/* ==============[parseInt()/parseFloat()]=============== */
+			//parseInt()
+			var var5 = "10" + 5;
+			console.log(var5); //105
+			
+			var5 = parseInt("10") + 5;
+			console.log(var5); //15
+			
+			//parseFloat()
+			var var6 = parseInt("10.5") + 5;
+			console.log(var6); //15
+			
+			var6 = parseFloat("10.5") + 5;
+			console.log(var6); //15.5
+			
+			
+			/* ==============[eval()]=============== */
+			function fun1() { 
+				console.log("fun1() 실행");
+				return "success";	
+			}
+			var result = fun1();
+			console.log(result); //fun1()메소드 실행 => fun1() 실행 success 출력
+
+			var result2 = eval("fun1()");
+			console.log(result2); //fun1()메소드 실행 => fun1() 실행 success 출력
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
