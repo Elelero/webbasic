@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<script>
+			var arr1 = [];
+			
+			//항목 추가
+			arr1[0] = "spring";
+			arr1[1] = "summer";
+			console.log(arr1);
+			
+			//항목 추가
+			arr1.push("fall");
+			arr1.push("winter");
+			console.log(arr1);
+			
+			//항목 삽입
+			const arr2 = ["Banana", "Orange", "Apple", "Mango"];
+			arr2.splice(2, 0, "멜론");
+			console.log(arr2);
+			
+			//항목 삭제
+			const arr3 = ["Banana", "Orange", "Apple", "Mango"];
+			arr3.splice(2, 1);
+			console.log(arr3);
+			
+			//부분 삭제
+			const arr4 = ["Banana", "Orange", "Apple", "Mango"];
+			arr4.splice(1, 2);
+			console.log(arr4);
+			
+			//항목 정렬
+			const arr5 = ["Banana", "Orange", "Apple", "Mango"];
+			arr5.sort(); //올림차순 정렬
+			console.log(arr5);
+			//내림차순을 하려면 먼저 sort를 해줘야함
+			arr5.reverse();
+			console.log(arr5);
+			
+		</script>
+	
+	</head>
+	<body>
+		
+	</body>
+</html>

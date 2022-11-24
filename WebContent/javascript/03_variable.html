@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<script>
+			//HTML 문서 전역 변수를 선언
+			var x1;
+			if(true) {
+				x1 = 10;				
+			}
+			console.log("x1: " + x1);
+			
+			//var로 선언된 변수는 블록 단위의 변수가 없음
+			if(true) {
+				//HTML 문서 전역 변수를 선언
+				var x2 = 20;				
+			}
+			console.log("x2: " + x2);
+			
+			//let으로 선언된 변수는 해당 블록 안에서만 사용할 수 있음
+			if(true) {
+				let x3 = 10;
+			}
+			console.log("x3: " + x3); //실행x
+	
+			//함수 선언
+			function funName1() {
+				//함수 내부의 변수는 함수 전체에서 사용할 수 있음. 함수를 벗어나서는 사용불가
+				console.log("실행");
+				if(true){
+					//로컬(함수) 변수를 선언
+					var x4 = 10;
+					let x5 = 15;
+					//HTML 문서 전역 변수를 선언
+					x6 = 20; //var 또는 let이 생략된 변수는 HTML 전역 특성을 가짐
+				}
+				console.log("x4: " + x4); //실행o
+				//console.log("x5: " + x5); //실행x
+				console.log("x6: " + x6); //실행o
+			}
+			console.log("x4: " + x4); //실행x
+			
+			//함수선언
+			function funName2() {
+				//전역변수값 출력
+				console.log("x1: " + x1); //실행o
+				console.log("x2: " + x2); //실행o
+				console.log("x6: " + x6); //실행o
+			}
+			
+		</script>
+	</head>
+	<body>
+		<button onclick="funName1()" class="btn btn-danger">funName1() 호출</button>
+		<button onclick="funName2()" class="btn btn-warning">funName2() 호출</button>
+	</body>
+</html>

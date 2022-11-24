@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			/* 모두 */
+			* {color:olive;}
+		
+			/*id가 topHeader 인 것*/
+			#topHeader{color:red;}
+
+			/*class가 subtitle 인 것*/
+			.subtitle{color:orange;}
+			
+			/*subtitle과 textContent를 모두 가지고 있는 것*/
+			.subtitle.textContent{color:blue;}
+			
+			/*menu 아래에 있는 모든 것 (공백)*/
+			.menu .item {color:fuchsia;}
+
+			/*menu 바로 아래에 있는 것 (꺽새)*/
+			.menu>.item {color:fuchsia;}
+			
+		</style>
+		
+	</head>
+	<body>
+		<h4 id="topHeader" class="subtitle">Selector CSS</h4>
+		<hr/>
+		
+		<h4 class="subtitle textContent">글자영역</h4>
+		<p>this is a paragraph</p> <!-- CSS 적용o -->
+		<div>this is content</div> <!-- CSS 적용x -->
+		
+		<h6 class="subtitle">메뉴영역</h6>
+		<p class="menu">
+			<a class="item" href="">link1</a>
+			<a class="item" href="">link2</a>
+			<a class="item" href="">link3</a>
+			<span>
+				<a class="item" href="">link4</a>
+			</span>
+		</p>		
+		
+		<a class="item" href="">link</a>
+		
+		<h5 class="subtitle">양식영역</h5>
+		<form>
+			<label for="userId">User Id</label>
+			<input id="userId" type="text"/>
+		</form>
+	</body>
+</html>

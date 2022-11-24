@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Flexbox Model</title>
+		<style>
+			#flex-container1, #flex-container3	{
+				display: flex;
+				background-color: blue;
+				margin: 20px;
+				justify-content: center;
+			}
+
+			#flex-container2	{
+				display: flex;
+				flex-direction: column;
+				background-color: red;
+				margin: 20px;
+				align-items: center;
+			}
+			
+			.item {
+				width: 50px;
+				height: 50px;
+				margin: 10px;
+				background-color: #ffffff;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h4>Flex box model</h4>
+		<hr/>
+		
+		<div id="flex-container1">
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+
+		<div id="flex-container2">
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+
+		<div id="flex-container3">
+			<div class="item" style="flex-grow: 2;"></div>
+			<div class="item" style="flex-grow: 3;"></div>
+			<div class="item" style="flex-grow: 5;"></div>
+		</div>
+		
+	</body>
+</html>

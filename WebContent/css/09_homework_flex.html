@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Naver</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			div {
+				border: 1px solid black;
+			}
+
+			#wrapper {
+				width: 1000px;
+				margin: 0px auto;
+			}
+			
+			img {
+  				width: 100%;
+			}
+			
+			#menu {
+				display: flex;
+			}
+			
+			#content1 {
+				display: flex;
+			}
+			
+			#content1 .left {
+				margin: auto 0px;
+				flex-grow: 7;
+			}
+			
+			#content1 .right {
+				display: flex;
+				flex-grow: 3;
+				flex-direction: column;
+			}
+			
+			#content1 .right img {
+				flex-grow: 1;
+				justify-content: flex-start;
+				margin-bottom: 5px;
+				
+			}
+			
+			#content2 {
+				display: flex;
+			}
+			
+			#content2 .left {
+				flex-grow: 7;
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			#content2 .left .w_left {
+				width: 10%;
+			}
+
+			#content2 .left .w_right {
+				flex-grow: 5;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			
+			#content2 .right {
+				flex-grow: 3;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			
+			<div id="banner1"><img src="../images/naver/banner1.png"/></div>
+			
+			<div id="banner2"><img src="../images/naver/banner2.png"/></div>
+			
+			<div id="search"><img src="../images/naver/네이버 검색 창.png"/></div>
+			
+			<div id="menu">
+				<div class="menu1"><img src="../images/naver/메일 카페 블로그.png"/></div>
+				<div class="menu2"><img src="../images/naver/날씨.png"/></div>
+			</div>
+			
+			<div id="content1">
+				<div class="left">
+					<div><img src="../images/naver/연합뉴스.png"/></div>
+					<div><img src="../images/naver/뉴스스탠드.png"/></div>
+					<div><img src="../images/naver/네이버 뉴스들 이름.png"/></div>
+				</div>
+				<div class="right">
+					<div><img src="../images/naver/네이버 로그인.png"/></div>
+					<div><img src="../images/naver/환율 증시 부분.png"/></div>
+					<div><img src="../images/naver/트랜드 쇼핑.png"/></div>
+				</div>
+			</div>
+			
+			<div id="content2">
+				<div class="left">
+					<div><img src="../images/naver/today.jpg"/></div>
+					<div><img src="../images/naver/submenu.jpg"/></div>
+					<div class="w_left">
+						<div><img src="../images/naver/webtoon_main.jpg"/></div>
+					</div>
+					<div class="w_right">
+						<div><img src="../images/naver/webtoon_1.jpg"/></div>
+						<div><img src="../images/naver/webtoon_2.jpg"/></div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="item"><img src="../images/naver/shopping1_1.jpg"/></div>
+					<div class="item"><img src="../images/naver/shopping1_2.jpg"/></div>
+					<div class="item"><img src="../images/naver/shopping1_3.jpg"/></div>
+					<div class="item"><img src="../images/naver/shopping2_1.jpg"/></div>
+					<div class="item"><img src="../images/naver/shopping2_2.jpg"/></div>
+					<div class="item"><img src="../images/naver/shopping2_3.jpg"/></div>
+				</div>
+			</div>
+			
+			<div id="footer"></div>
+		</div>
+	</body>
+</html>

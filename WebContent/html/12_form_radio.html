@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Radio Button</title>
+		<style>
+			form {
+				border: 2px solid black
+			}
+		</style>
+	</head>
+	<body>
+		<h4>form radio button</h4>
+		<hr/>
+		
+		<form>
+			<!-- name이 다르면 같은 그룹에 속해있지 않으므로 개별 선택 불가능 (무조건 같이 선택됨) -->
+			<!-- 이름이 같으면 같은 그룹에 속하는 버튼(개별적으로 선택 가능함) 같은 그룹에서는 하나만 선택 가능하기 때문 -->
+			<input id="Language1" type="radio" name="fav_language" value="html" checked/>
+			<label for="Language1">HTML</label>
+			
+			<input id="Language2" type="radio" name="fav_language" value="css"/>
+			<label for="Language2">CSS</label>
+
+			<input id="Language3" type="radio" name="fav_language" value="javascript"/>
+			<label for="Language3">JavaScript</label>
+			
+			<input type="submit" value="전송"/>
+		</form>
+	</body>
+</html>
