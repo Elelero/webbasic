@@ -10,41 +10,24 @@
 	
 		<script>
 			function requestContent() {
-				var xhttp = new XMLHttpRequest();
+				//$("#content").load("01_html_fragment.html");
 				
-				//응답 콜백 함수 등록
-				xhttp.onload = function() {
-					console.log(xhttp.responseText); //xhttp 대신 this를 써도 무관!
-					document.querySelector("#content").innerHTML = xhttp.responseText;
-				};
-				
-				//요청하기
-				xhttp.open("GET", "01_html_fragment.html");
-				xhttp.send();
+				$.get("01_html_fragment.html", function(data) {
+					$("content").html(data);
+				});
 			}
 			
 			function requestJson() {
-				var xhttp = new XMLHttpRequest();
-				
-				//응답 콜백 함수 등록
-				xhttp.onload = function() {
-					console.log(xhttp.responseText); //xhttp 대신 this를 써도 무관!
-					
-					var result = JSON.parse(xhttp.responseText);
+				$.get("01_data.json", function(result) {
 					console.log(result);
-					console.log(result.status);
 					console.log(result.data);
 					
 					result.data.forEach((imgName)=>{
 						console.log(imgName);
 						const imgTag = '<img src="../images/' + imgName + '" width="100px"/>'
-						document.querySelector("#album").innerHTML += imgTag;
-					});
-				};
-				
-				//요청하기
-				xhttp.open("GET", "01_data.json");
-				xhttp.send();
+						$("#album").append(imgTag);
+					})
+				});
 			}
 		</script>
 	</head>

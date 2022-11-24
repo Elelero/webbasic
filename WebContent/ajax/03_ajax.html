@@ -10,42 +10,28 @@
 	
 		<script>
 			function requestContent() {
-				var xhttp = new XMLHttpRequest();
-				
-				//응답 콜백 함수 등록
-				xhttp.onload = function() {
-					console.log(xhttp.responseText); //xhttp 대신 this를 써도 무관!
-					document.querySelector("#content").innerHTML = xhttp.responseText;
-				};
-				
-				//요청하기
-				xhttp.open("GET", "01_html_fragment.html");
-				xhttp.send();
+				$.ajax({
+					url: "01_html_fragment.html",
+					type: "get", 
+					success: function(data) { //callback 함수
+						$("#content").html(data);
+					}
+				});
 			}
 			
 			function requestJson() {
-				var xhttp = new XMLHttpRequest();
-				
-				//응답 콜백 함수 등록
-				xhttp.onload = function() {
-					console.log(xhttp.responseText); //xhttp 대신 this를 써도 무관!
-					
-					var result = JSON.parse(xhttp.responseText);
-					console.log(result);
-					console.log(result.status);
-					console.log(result.data);
-					
-					result.data.forEach((imgName)=>{
-						console.log(imgName);
-						const imgTag = '<img src="../images/' + imgName + '" width="100px"/>'
-						document.querySelector("#album").innerHTML += imgTag;
-					});
-				};
-				
-				//요청하기
-				xhttp.open("GET", "01_data.json");
-				xhttp.send();
-			}
+				$.ajax({
+					url: "01_data.json",
+					type: "get", 
+					success:  function(result) {
+								result.data.forEach((imgName)=>{
+									console.log(imgName);
+									const imgTag = '<img src="../images/' + imgName + '" width="100px"/>'
+									$("#album").append(imgTag);
+								})
+					}
+				});
+			}	
 		</script>
 	</head>
 	<body>
